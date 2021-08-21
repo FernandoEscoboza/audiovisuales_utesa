@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="144" pageHeight="72" columnWidth="129" leftMargin="7" rightMargin="8" topMargin="11" bottomMargin="9" uuid="a29d6c2f-0316-4a2f-96c7-aa351f2a8a35">
+	<property name="ireport.zoom" value="2.853116706110003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="empresa" class="java.lang.String"/>
+	<field name="cod" class="java.lang.String"/>
+	<field name="cod2" class="java.lang.String"/>
+	<field name="describcion" class="java.lang.String"/>
+	<field name="serial" class="java.lang.String"/>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="32" y="11" width="70" height="20" uuid="955575a4-9806-4ba1-97bd-769f6e53644b"/>
+				<textFieldExpression><![CDATA[$P{empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="105" width="43" height="20" uuid="dccf2259-1645-4652-9b75-6fa20be657a1"/>
+				<textFieldExpression><![CDATA[$F{cod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="31" width="73" height="20" uuid="27aeb3b7-4969-487f-81b1-4f5ee0d987f0"/>
+				<textFieldExpression><![CDATA[$F{describcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="105" width="67" height="20" uuid="89ff1619-d85d-49fd-86be-0cea557e820a"/>
+				<textFieldExpression><![CDATA[$F{serial}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="7" y="63" width="122" height="19" uuid="8157d3c3-7c92-4370-ac40-e43dfc24563d"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{cod2}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>
